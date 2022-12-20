@@ -1,0 +1,32 @@
+'use strict';
+const Questions = require('./questionList.js');
+const dotenv = require('dotenv');
+dotenv.config();
+
+const mongoose = require('mongoose');
+const MONGODB_URL = process.env.MONGODB_URL;
+mongoose.connect(MONGODB_URL);
+
+
+const seedDataBase = async () => {
+
+  await Questions.create({
+    questionListId: 'Fun',
+    questions: [
+      ['Would you rather?', 'Have a rewind button ', 'Have pause button on your life'],
+      ['Would you rather?', 'be Batman', 'be Spiderman'],
+      ['Would you rather?', 'be a superhero', 'be a supervillain'],
+      ['Would you rather?', 'be a wizard', 'be a vampire'],
+    ]
+
+  });
+  console.log('questions added');
+  mongoose.disconnect();
+
+};
+
+
+seedDataBase();
+
+
+
