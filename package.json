@@ -1,0 +1,27 @@
+{
+  "name": "would-you-rather-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/would-you-rather/would-you-rather-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/would-you-rather/would-you-rather-backend/issues"
+  },
+  "homepage": "https://github.com/would-you-rather/would-you-rather-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^4.13.0",
+    "mongoose": "^6.8.1",
+    "nodemon": "^2.0.20"
+  }
+}
