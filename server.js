@@ -120,10 +120,14 @@ app.get('/questionLists/:questionListId', async(request, response) => {
 
 // Save the user's response to a question.
 app.post('/questionResponses', async(request, response) => {
+  try{
+    let newResponse = await questionResponses.create(request.body);
 
-  let newResponse = await questionResponses.create(request.body);
-
-  response.status(200).send(newResponse);
+    response.status(200).send(newResponse);
+  }
+  catch (error){
+    response.status(500).send(error);
+  }
 });
 
 // Return all user responses to a question..
