@@ -19,16 +19,21 @@ mongoose.connect(MONGODB_URL);
 /* Functions for managing rooms */
 // createRoom creates a room.
 app.post('/rooms', async(request, response) => {
+  try {
+    let roomToCreate = {
+      owner: request.body.owner,
+      questionListId: request.body.questionListId,
+    };
 
-  let roomToCreate = {
-    owner: request.body.owner,
-    questionListId: request.body.questionListId,
-  };
+    let newRoom = await rooms.create(roomToCreate);
 
-  let newRoom = await rooms.create(roomToCreate);
-
-  response.send(newRoom);
+    response.send(newRoom);
+  }
+  catch (error) {
+    response.status(500).send(error);
+  }
 });
+
 
 //updateRoom updates the room with the new question list.
 app.put('/rooms/:id', async (request, response) => {
@@ -115,10 +120,14 @@ app.get('/questionLists/:questionListId', async(request, response) => {
 
 // Save the user's response to a question.
 app.post('/questionResponses', async(request, response) => {
+  try{
+    let newResponse = await questionResponses.create(request.body);
 
-  let newResponse = await questionResponses.create(request.body);
-
-  response.status(200).send(newResponse);
+    response.status(200).send(newResponse);
+  }
+  catch (error){
+    response.status(500).send(error);
+  }
 });
 
 // Return all user responses to a question..
