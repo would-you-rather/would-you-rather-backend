@@ -2,7 +2,7 @@
   "name": "would-you-rather-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +22,8 @@
     "db": "^3.4.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^3.0.0",
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.1",
     "nodemon": "^2.0.20"
