@@ -13,10 +13,10 @@ const seedDataBase = async () => {
   await Questions.create({
     questionListId: 'Fun',
     questions: [
-      ['Would you rather?', 'Have a rewind button ', 'Have pause button on your life'],
-      ['Would you rather?', 'be Batman', 'be Spiderman'],
-      ['Would you rather?', 'be a superhero', 'be a supervillain'],
-      ['Would you rather?', 'be a wizard', 'be a vampire'],
+      ['Have a rewind button ', 'Have pause button on your life'],
+      ['be Batman', 'be Spiderman'],
+      ['be a superhero', 'be a supervillain'],
+      ['be a wizard', 'be a vampire'],
     ]
 
   });

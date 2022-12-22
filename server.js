@@ -140,7 +140,7 @@ app.get('/questionResponses/:roomId', async(request, response) => {
     response.status(500).send('Error finding responses.');
     return;
   }
-
+  console.log('responses', responses);
   response.status(200).send(responses);
 
 });
